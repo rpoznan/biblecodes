@@ -1,2 +1,4 @@
 eclipse.preferences.version=1
-encoding/<project>=UTF-8
+encoding//src/main/java/org/torah/loader/gem/GematriaCalc.java=UTF-8
+encoding//src/main/java/org/torah/loader/jps/JpsHtmlParser.java=UTF-8
+encoding//src/test/java/org/torah/loader/LoadFileTest.java=UTF-8
