@@ -955,6 +955,654 @@ public class VerseSelectTest {
 	}
 	
 	@Test
+	public void testQuery40() {
+		VerseDao d = new VerseDao();
+		List<String[]> verseList = d.versesByBook(40);
+		List<String[]> wordList = new ArrayList<String[]>();
+		for(String[] gg: verseList) {
+			System.out.println(gg[0]);
+			System.out.println(gg[1]);
+			String[] vv = VerseSplitter.splitVerse(gg[1]);
+			for(int c=0; c < vv.length; c++) {
+				String[] row = new String[6];
+				//verse_id,word,tran_word,num_value,num_index,created_by
+				row[0] = gg[0];
+				row[1] = vv[c];
+				row[2] = Transliterator.transliterate(row[1]);
+				row[3] = GematriaCalc.calculate(row[1])+"";
+				row[4] = c+"";
+				row[5] = "rpoznan";
+				wordList.add(row);
+			}
+		}
+		new SqlVerseWord().writeFile(new File("C:\\temp\\matthewWords.sql"), wordList);
+	}
+	
+	@Test
+	public void testQuery41() {
+		VerseDao d = new VerseDao();
+		List<String[]> verseList = d.versesByBook(41);
+		List<String[]> wordList = new ArrayList<String[]>();
+		for(String[] gg: verseList) {
+			System.out.println(gg[0]);
+			System.out.println(gg[1]);
+			String[] vv = VerseSplitter.splitVerse(gg[1]);
+			for(int c=0; c < vv.length; c++) {
+				String[] row = new String[6];
+				//verse_id,word,tran_word,num_value,num_index,created_by
+				row[0] = gg[0];
+				row[1] = vv[c];
+				row[2] = Transliterator.transliterate(row[1]);
+				row[3] = GematriaCalc.calculate(row[1])+"";
+				row[4] = c+"";
+				row[5] = "rpoznan";
+				wordList.add(row);
+			}
+		}
+		new SqlVerseWord().writeFile(new File("C:\\temp\\markWords.sql"), wordList);
+	}
+	
+	@Test
+	public void testQuery42() {
+		VerseDao d = new VerseDao();
+		List<String[]> verseList = d.versesByBook(42);
+		List<String[]> wordList = new ArrayList<String[]>();
+		for(String[] gg: verseList) {
+			System.out.println(gg[0]);
+			System.out.println(gg[1]);
+			String[] vv = VerseSplitter.splitVerse(gg[1]);
+			for(int c=0; c < vv.length; c++) {
+				String[] row = new String[6];
+				//verse_id,word,tran_word,num_value,num_index,created_by
+				row[0] = gg[0];
+				row[1] = vv[c];
+				row[2] = Transliterator.transliterate(row[1]);
+				row[3] = GematriaCalc.calculate(row[1])+"";
+				row[4] = c+"";
+				row[5] = "rpoznan";
+				wordList.add(row);
+			}
+		}
+		new SqlVerseWord().writeFile(new File("C:\\temp\\lukeWords.sql"), wordList);
+	}
+	
+	@Test
+	public void testQuery43() {
+		VerseDao d = new VerseDao();
+		List<String[]> verseList = d.versesByBook(43);
+		List<String[]> wordList = new ArrayList<String[]>();
+		for(String[] gg: verseList) {
+			System.out.println(gg[0]);
+			System.out.println(gg[1]);
+			String[] vv = VerseSplitter.splitVerse(gg[1]);
+			for(int c=0; c < vv.length; c++) {
+				String[] row = new String[6];
+				//verse_id,word,tran_word,num_value,num_index,created_by
+				row[0] = gg[0];
+				row[1] = vv[c];
+				row[2] = Transliterator.transliterate(row[1]);
+				row[3] = GematriaCalc.calculate(row[1])+"";
+				row[4] = c+"";
+				row[5] = "rpoznan";
+				wordList.add(row);
+			}
+		}
+		new SqlVerseWord().writeFile(new File("C:\\temp\\johnWords.sql"), wordList);
+	}
+	
+	@Test
+	public void testQuery44() {
+		VerseDao d = new VerseDao();
+		List<String[]> verseList = d.versesByBook(44);
+		List<String[]> wordList = new ArrayList<String[]>();
+		for(String[] gg: verseList) {
+			System.out.println(gg[0]);
+			System.out.println(gg[1]);
+			String[] vv = VerseSplitter.splitVerse(gg[1]);
+			for(int c=0; c < vv.length; c++) {
+				String[] row = new String[6];
+				//verse_id,word,tran_word,num_value,num_index,created_by
+				row[0] = gg[0];
+				row[1] = vv[c];
+				row[2] = Transliterator.transliterate(row[1]);
+				row[3] = GematriaCalc.calculate(row[1])+"";
+				row[4] = c+"";
+				row[5] = "rpoznan";
+				wordList.add(row);
+			}
+		}
+		new SqlVerseWord().writeFile(new File("C:\\temp\\actsWords.sql"), wordList);
+	}
+	
+	@Test
+	public void testQuery45() {
+		VerseDao d = new VerseDao();
+		List<String[]> verseList = d.versesByBook(45);
+		List<String[]> wordList = new ArrayList<String[]>();
+		for(String[] gg: verseList) {
+			System.out.println(gg[0]);
+			System.out.println(gg[1]);
+			String[] vv = VerseSplitter.splitVerse(gg[1]);
+			for(int c=0; c < vv.length; c++) {
+				String[] row = new String[6];
+				//verse_id,word,tran_word,num_value,num_index,created_by
+				row[0] = gg[0];
+				row[1] = vv[c];
+				row[2] = Transliterator.transliterate(row[1]);
+				row[3] = GematriaCalc.calculate(row[1])+"";
+				row[4] = c+"";
+				row[5] = "rpoznan";
+				wordList.add(row);
+			}
+		}
+		new SqlVerseWord().writeFile(new File("C:\\temp\\romansWords.sql"), wordList);
+	}
+	
+	@Test
+	public void testQuery46() {
+		VerseDao d = new VerseDao();
+		List<String[]> verseList = d.versesByBook(46);
+		List<String[]> wordList = new ArrayList<String[]>();
+		for(String[] gg: verseList) {
+			System.out.println(gg[0]);
+			System.out.println(gg[1]);
+			String[] vv = VerseSplitter.splitVerse(gg[1]);
+			for(int c=0; c < vv.length; c++) {
+				String[] row = new String[6];
+				//verse_id,word,tran_word,num_value,num_index,created_by
+				row[0] = gg[0];
+				row[1] = vv[c];
+				row[2] = Transliterator.transliterate(row[1]);
+				row[3] = GematriaCalc.calculate(row[1])+"";
+				row[4] = c+"";
+				row[5] = "rpoznan";
+				wordList.add(row);
+			}
+		}
+		new SqlVerseWord().writeFile(new File("C:\\temp\\1corinthiansWords.sql"), wordList);
+	}
+	
+	@Test
+	public void testQuery47() {
+		VerseDao d = new VerseDao();
+		List<String[]> verseList = d.versesByBook(47);
+		List<String[]> wordList = new ArrayList<String[]>();
+		for(String[] gg: verseList) {
+			System.out.println(gg[0]);
+			System.out.println(gg[1]);
+			String[] vv = VerseSplitter.splitVerse(gg[1]);
+			for(int c=0; c < vv.length; c++) {
+				String[] row = new String[6];
+				//verse_id,word,tran_word,num_value,num_index,created_by
+				row[0] = gg[0];
+				row[1] = vv[c];
+				row[2] = Transliterator.transliterate(row[1]);
+				row[3] = GematriaCalc.calculate(row[1])+"";
+				row[4] = c+"";
+				row[5] = "rpoznan";
+				wordList.add(row);
+			}
+		}
+		new SqlVerseWord().writeFile(new File("C:\\temp\\2corinthiansWords.sql"), wordList);
+	}
+	
+	@Test
+	public void testQuery48() {
+		VerseDao d = new VerseDao();
+		List<String[]> verseList = d.versesByBook(48);
+		List<String[]> wordList = new ArrayList<String[]>();
+		for(String[] gg: verseList) {
+			System.out.println(gg[0]);
+			System.out.println(gg[1]);
+			String[] vv = VerseSplitter.splitVerse(gg[1]);
+			for(int c=0; c < vv.length; c++) {
+				String[] row = new String[6];
+				//verse_id,word,tran_word,num_value,num_index,created_by
+				row[0] = gg[0];
+				row[1] = vv[c];
+				row[2] = Transliterator.transliterate(row[1]);
+				row[3] = GematriaCalc.calculate(row[1])+"";
+				row[4] = c+"";
+				row[5] = "rpoznan";
+				wordList.add(row);
+			}
+		}
+		new SqlVerseWord().writeFile(new File("C:\\temp\\galationsWords.sql"), wordList);
+	}
+	
+	@Test
+	public void testQuery49() {
+		VerseDao d = new VerseDao();
+		List<String[]> verseList = d.versesByBook(49);
+		List<String[]> wordList = new ArrayList<String[]>();
+		for(String[] gg: verseList) {
+			System.out.println(gg[0]);
+			System.out.println(gg[1]);
+			String[] vv = VerseSplitter.splitVerse(gg[1]);
+			for(int c=0; c < vv.length; c++) {
+				String[] row = new String[6];
+				//verse_id,word,tran_word,num_value,num_index,created_by
+				row[0] = gg[0];
+				row[1] = vv[c];
+				row[2] = Transliterator.transliterate(row[1]);
+				row[3] = GematriaCalc.calculate(row[1])+"";
+				row[4] = c+"";
+				row[5] = "rpoznan";
+				wordList.add(row);
+			}
+		}
+		new SqlVerseWord().writeFile(new File("C:\\temp\\ephesiansWords.sql"), wordList);
+	}
+	
+	@Test
+	public void testQuery50() {
+		VerseDao d = new VerseDao();
+		List<String[]> verseList = d.versesByBook(50);
+		List<String[]> wordList = new ArrayList<String[]>();
+		for(String[] gg: verseList) {
+			System.out.println(gg[0]);
+			System.out.println(gg[1]);
+			String[] vv = VerseSplitter.splitVerse(gg[1]);
+			for(int c=0; c < vv.length; c++) {
+				String[] row = new String[6];
+				//verse_id,word,tran_word,num_value,num_index,created_by
+				row[0] = gg[0];
+				row[1] = vv[c];
+				row[2] = Transliterator.transliterate(row[1]);
+				row[3] = GematriaCalc.calculate(row[1])+"";
+				row[4] = c+"";
+				row[5] = "rpoznan";
+				wordList.add(row);
+			}
+		}
+		new SqlVerseWord().writeFile(new File("C:\\temp\\phillipiansWords.sql"), wordList);
+	}
+	
+	@Test
+	public void testQuery51() {
+		VerseDao d = new VerseDao();
+		List<String[]> verseList = d.versesByBook(51);
+		List<String[]> wordList = new ArrayList<String[]>();
+		for(String[] gg: verseList) {
+			System.out.println(gg[0]);
+			System.out.println(gg[1]);
+			String[] vv = VerseSplitter.splitVerse(gg[1]);
+			for(int c=0; c < vv.length; c++) {
+				String[] row = new String[6];
+				//verse_id,word,tran_word,num_value,num_index,created_by
+				row[0] = gg[0];
+				row[1] = vv[c];
+				row[2] = Transliterator.transliterate(row[1]);
+				row[3] = GematriaCalc.calculate(row[1])+"";
+				row[4] = c+"";
+				row[5] = "rpoznan";
+				wordList.add(row);
+			}
+		}
+		new SqlVerseWord().writeFile(new File("C:\\temp\\colossiansWords.sql"), wordList);
+	}
+	
+	@Test
+	public void testQuery52() {
+		VerseDao d = new VerseDao();
+		List<String[]> verseList = d.versesByBook(52);
+		List<String[]> wordList = new ArrayList<String[]>();
+		for(String[] gg: verseList) {
+			System.out.println(gg[0]);
+			System.out.println(gg[1]);
+			String[] vv = VerseSplitter.splitVerse(gg[1]);
+			for(int c=0; c < vv.length; c++) {
+				String[] row = new String[6];
+				//verse_id,word,tran_word,num_value,num_index,created_by
+				row[0] = gg[0];
+				row[1] = vv[c];
+				row[2] = Transliterator.transliterate(row[1]);
+				row[3] = GematriaCalc.calculate(row[1])+"";
+				row[4] = c+"";
+				row[5] = "rpoznan";
+				wordList.add(row);
+			}
+		}
+		new SqlVerseWord().writeFile(new File("C:\\temp\\1ThessWords.sql"), wordList);
+	}
+	
+	@Test
+	public void testQuery53() {
+		VerseDao d = new VerseDao();
+		List<String[]> verseList = d.versesByBook(53);
+		List<String[]> wordList = new ArrayList<String[]>();
+		for(String[] gg: verseList) {
+			System.out.println(gg[0]);
+			System.out.println(gg[1]);
+			String[] vv = VerseSplitter.splitVerse(gg[1]);
+			for(int c=0; c < vv.length; c++) {
+				String[] row = new String[6];
+				//verse_id,word,tran_word,num_value,num_index,created_by
+				row[0] = gg[0];
+				row[1] = vv[c];
+				row[2] = Transliterator.transliterate(row[1]);
+				row[3] = GematriaCalc.calculate(row[1])+"";
+				row[4] = c+"";
+				row[5] = "rpoznan";
+				wordList.add(row);
+			}
+		}
+		new SqlVerseWord().writeFile(new File("C:\\temp\\2ThessWords.sql"), wordList);
+	}
+	
+	@Test
+	public void testQuery54() {
+		VerseDao d = new VerseDao();
+		List<String[]> verseList = d.versesByBook(54);
+		List<String[]> wordList = new ArrayList<String[]>();
+		for(String[] gg: verseList) {
+			System.out.println(gg[0]);
+			System.out.println(gg[1]);
+			String[] vv = VerseSplitter.splitVerse(gg[1]);
+			for(int c=0; c < vv.length; c++) {
+				String[] row = new String[6];
+				//verse_id,word,tran_word,num_value,num_index,created_by
+				row[0] = gg[0];
+				row[1] = vv[c];
+				row[2] = Transliterator.transliterate(row[1]);
+				row[3] = GematriaCalc.calculate(row[1])+"";
+				row[4] = c+"";
+				row[5] = "rpoznan";
+				wordList.add(row);
+			}
+		}
+		new SqlVerseWord().writeFile(new File("C:\\temp\\1TimothyWords.sql"), wordList);
+	}
+	
+	@Test
+	public void testQuery55() {
+		VerseDao d = new VerseDao();
+		List<String[]> verseList = d.versesByBook(55);
+		List<String[]> wordList = new ArrayList<String[]>();
+		for(String[] gg: verseList) {
+			System.out.println(gg[0]);
+			System.out.println(gg[1]);
+			String[] vv = VerseSplitter.splitVerse(gg[1]);
+			for(int c=0; c < vv.length; c++) {
+				String[] row = new String[6];
+				//verse_id,word,tran_word,num_value,num_index,created_by
+				row[0] = gg[0];
+				row[1] = vv[c];
+				row[2] = Transliterator.transliterate(row[1]);
+				row[3] = GematriaCalc.calculate(row[1])+"";
+				row[4] = c+"";
+				row[5] = "rpoznan";
+				wordList.add(row);
+			}
+		}
+		new SqlVerseWord().writeFile(new File("C:\\temp\\2TimothyWords.sql"), wordList);
+	}
+	
+	@Test
+	public void testQuery56() {
+		VerseDao d = new VerseDao();
+		List<String[]> verseList = d.versesByBook(56);
+		List<String[]> wordList = new ArrayList<String[]>();
+		for(String[] gg: verseList) {
+			System.out.println(gg[0]);
+			System.out.println(gg[1]);
+			String[] vv = VerseSplitter.splitVerse(gg[1]);
+			for(int c=0; c < vv.length; c++) {
+				String[] row = new String[6];
+				//verse_id,word,tran_word,num_value,num_index,created_by
+				row[0] = gg[0];
+				row[1] = vv[c];
+				row[2] = Transliterator.transliterate(row[1]);
+				row[3] = GematriaCalc.calculate(row[1])+"";
+				row[4] = c+"";
+				row[5] = "rpoznan";
+				wordList.add(row);
+			}
+		}
+		new SqlVerseWord().writeFile(new File("C:\\temp\\titusWords.sql"), wordList);
+	}
+	
+	@Test
+	public void testQuery57() {
+		VerseDao d = new VerseDao();
+		List<String[]> verseList = d.versesByBook(57);
+		List<String[]> wordList = new ArrayList<String[]>();
+		for(String[] gg: verseList) {
+			System.out.println(gg[0]);
+			System.out.println(gg[1]);
+			String[] vv = VerseSplitter.splitVerse(gg[1]);
+			for(int c=0; c < vv.length; c++) {
+				String[] row = new String[6];
+				//verse_id,word,tran_word,num_value,num_index,created_by
+				row[0] = gg[0];
+				row[1] = vv[c];
+				row[2] = Transliterator.transliterate(row[1]);
+				row[3] = GematriaCalc.calculate(row[1])+"";
+				row[4] = c+"";
+				row[5] = "rpoznan";
+				wordList.add(row);
+			}
+		}
+		new SqlVerseWord().writeFile(new File("C:\\temp\\philemonWords.sql"), wordList);
+	}
+	
+	@Test
+	public void testQuery58() {
+		VerseDao d = new VerseDao();
+		List<String[]> verseList = d.versesByBook(58);
+		List<String[]> wordList = new ArrayList<String[]>();
+		for(String[] gg: verseList) {
+			System.out.println(gg[0]);
+			System.out.println(gg[1]);
+			String[] vv = VerseSplitter.splitVerse(gg[1]);
+			for(int c=0; c < vv.length; c++) {
+				String[] row = new String[6];
+				//verse_id,word,tran_word,num_value,num_index,created_by
+				row[0] = gg[0];
+				row[1] = vv[c];
+				row[2] = Transliterator.transliterate(row[1]);
+				row[3] = GematriaCalc.calculate(row[1])+"";
+				row[4] = c+"";
+				row[5] = "rpoznan";
+				wordList.add(row);
+			}
+		}
+		new SqlVerseWord().writeFile(new File("C:\\temp\\hebrewsWords.sql"), wordList);
+	}
+	
+	@Test
+	public void testQuery59() {
+		VerseDao d = new VerseDao();
+		List<String[]> verseList = d.versesByBook(59);
+		List<String[]> wordList = new ArrayList<String[]>();
+		for(String[] gg: verseList) {
+			System.out.println(gg[0]);
+			System.out.println(gg[1]);
+			String[] vv = VerseSplitter.splitVerse(gg[1]);
+			for(int c=0; c < vv.length; c++) {
+				String[] row = new String[6];
+				//verse_id,word,tran_word,num_value,num_index,created_by
+				row[0] = gg[0];
+				row[1] = vv[c];
+				row[2] = Transliterator.transliterate(row[1]);
+				row[3] = GematriaCalc.calculate(row[1])+"";
+				row[4] = c+"";
+				row[5] = "rpoznan";
+				wordList.add(row);
+			}
+		}
+		new SqlVerseWord().writeFile(new File("C:\\temp\\jamesWords.sql"), wordList);
+	}
+	
+	@Test
+	public void testQuery60() {
+		VerseDao d = new VerseDao();
+		List<String[]> verseList = d.versesByBook(60);
+		List<String[]> wordList = new ArrayList<String[]>();
+		for(String[] gg: verseList) {
+			System.out.println(gg[0]);
+			System.out.println(gg[1]);
+			String[] vv = VerseSplitter.splitVerse(gg[1]);
+			for(int c=0; c < vv.length; c++) {
+				String[] row = new String[6];
+				//verse_id,word,tran_word,num_value,num_index,created_by
+				row[0] = gg[0];
+				row[1] = vv[c];
+				row[2] = Transliterator.transliterate(row[1]);
+				row[3] = GematriaCalc.calculate(row[1])+"";
+				row[4] = c+"";
+				row[5] = "rpoznan";
+				wordList.add(row);
+			}
+		}
+		new SqlVerseWord().writeFile(new File("C:\\temp\\1peterWords.sql"), wordList);
+	}
+	
+	@Test
+	public void testQuery61() {
+		VerseDao d = new VerseDao();
+		List<String[]> verseList = d.versesByBook(61);
+		List<String[]> wordList = new ArrayList<String[]>();
+		for(String[] gg: verseList) {
+			System.out.println(gg[0]);
+			System.out.println(gg[1]);
+			String[] vv = VerseSplitter.splitVerse(gg[1]);
+			for(int c=0; c < vv.length; c++) {
+				String[] row = new String[6];
+				//verse_id,word,tran_word,num_value,num_index,created_by
+				row[0] = gg[0];
+				row[1] = vv[c];
+				row[2] = Transliterator.transliterate(row[1]);
+				row[3] = GematriaCalc.calculate(row[1])+"";
+				row[4] = c+"";
+				row[5] = "rpoznan";
+				wordList.add(row);
+			}
+		}
+		new SqlVerseWord().writeFile(new File("C:\\temp\\2peterWords.sql"), wordList);
+	}
+	
+	@Test
+	public void testQuery62() {
+		VerseDao d = new VerseDao();
+		List<String[]> verseList = d.versesByBook(62);
+		List<String[]> wordList = new ArrayList<String[]>();
+		for(String[] gg: verseList) {
+			System.out.println(gg[0]);
+			System.out.println(gg[1]);
+			String[] vv = VerseSplitter.splitVerse(gg[1]);
+			for(int c=0; c < vv.length; c++) {
+				String[] row = new String[6];
+				//verse_id,word,tran_word,num_value,num_index,created_by
+				row[0] = gg[0];
+				row[1] = vv[c];
+				row[2] = Transliterator.transliterate(row[1]);
+				row[3] = GematriaCalc.calculate(row[1])+"";
+				row[4] = c+"";
+				row[5] = "rpoznan";
+				wordList.add(row);
+			}
+		}
+		new SqlVerseWord().writeFile(new File("C:\\temp\\1johnWords.sql"), wordList);
+	}
+	
+	@Test
+	public void testQuery63() {
+		VerseDao d = new VerseDao();
+		List<String[]> verseList = d.versesByBook(63);
+		List<String[]> wordList = new ArrayList<String[]>();
+		for(String[] gg: verseList) {
+			System.out.println(gg[0]);
+			System.out.println(gg[1]);
+			String[] vv = VerseSplitter.splitVerse(gg[1]);
+			for(int c=0; c < vv.length; c++) {
+				String[] row = new String[6];
+				//verse_id,word,tran_word,num_value,num_index,created_by
+				row[0] = gg[0];
+				row[1] = vv[c];
+				row[2] = Transliterator.transliterate(row[1]);
+				row[3] = GematriaCalc.calculate(row[1])+"";
+				row[4] = c+"";
+				row[5] = "rpoznan";
+				wordList.add(row);
+			}
+		}
+		new SqlVerseWord().writeFile(new File("C:\\temp\\2johnWords.sql"), wordList);
+	}
+	
+	@Test
+	public void testQuery64() {
+		VerseDao d = new VerseDao();
+		List<String[]> verseList = d.versesByBook(64);
+		List<String[]> wordList = new ArrayList<String[]>();
+		for(String[] gg: verseList) {
+			System.out.println(gg[0]);
+			System.out.println(gg[1]);
+			String[] vv = VerseSplitter.splitVerse(gg[1]);
+			for(int c=0; c < vv.length; c++) {
+				String[] row = new String[6];
+				//verse_id,word,tran_word,num_value,num_index,created_by
+				row[0] = gg[0];
+				row[1] = vv[c];
+				row[2] = Transliterator.transliterate(row[1]);
+				row[3] = GematriaCalc.calculate(row[1])+"";
+				row[4] = c+"";
+				row[5] = "rpoznan";
+				wordList.add(row);
+			}
+		}
+		new SqlVerseWord().writeFile(new File("C:\\temp\\3johnWords.sql"), wordList);
+	}
+	
+	@Test
+	public void testQuery65() {
+		VerseDao d = new VerseDao();
+		List<String[]> verseList = d.versesByBook(65);
+		List<String[]> wordList = new ArrayList<String[]>();
+		for(String[] gg: verseList) {
+			System.out.println(gg[0]);
+			System.out.println(gg[1]);
+			String[] vv = VerseSplitter.splitVerse(gg[1]);
+			for(int c=0; c < vv.length; c++) {
+				String[] row = new String[6];
+				//verse_id,word,tran_word,num_value,num_index,created_by
+				row[0] = gg[0];
+				row[1] = vv[c];
+				row[2] = Transliterator.transliterate(row[1]);
+				row[3] = GematriaCalc.calculate(row[1])+"";
+				row[4] = c+"";
+				row[5] = "rpoznan";
+				wordList.add(row);
+			}
+		}
+		new SqlVerseWord().writeFile(new File("C:\\temp\\judeWords.sql"), wordList);
+	}
+	
+	@Test
+	public void testQuery66() {
+		VerseDao d = new VerseDao();
+		List<String[]> verseList = d.versesByBook(66);
+		List<String[]> wordList = new ArrayList<String[]>();
+		for(String[] gg: verseList) {
+			System.out.println(gg[0]);
+			System.out.println(gg[1]);
+			String[] vv = VerseSplitter.splitVerse(gg[1]);
+			for(int c=0; c < vv.length; c++) {
+				String[] row = new String[6];
+				//verse_id,word,tran_word,num_value,num_index,created_by
+				row[0] = gg[0];
+				row[1] = vv[c];
+				row[2] = Transliterator.transliterate(row[1]);
+				row[3] = GematriaCalc.calculate(row[1])+"";
+				row[4] = c+"";
+				row[5] = "rpoznan";
+				wordList.add(row);
+			}
+		}
+		new SqlVerseWord().writeFile(new File("C:\\temp\\revelationWords.sql"), wordList);
+	}
+	
+	@Test
 	public void makeFile() {
 		//FilenameFilter x = new FilenameFilter(".sql");
 		File temp = new File("C:\\temp");

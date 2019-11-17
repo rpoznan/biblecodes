@@ -31,7 +31,7 @@ public class SqlVerse {
 	public String toSql(String[] data) {
 		validateRow(data);
 		StringBuffer sb = new StringBuffer();
-		sb.append("insert into nanzopco_torah.torah_verse (book_id,verse,eng_verse,num_chapter,num_verse,h_verse,created_by,tran_verse,num_value) values (");
+		sb.append("insert into nanzopco_torah.torah_verse (book_id,verse,eng_verse,num_chapter,num_verse,h_verse,created_by,tran_verse,num_value,h_chapter) values (");
 		sb.append("'"+data[0]+"',");
 		sb.append("'"+escapeChars(data[1])+"',");
 		sb.append("'"+escapeChars(data[2])+"',");
@@ -40,7 +40,8 @@ public class SqlVerse {
 		sb.append("'"+data[5]+"',");
 		sb.append("'"+data[6]+"',");
 		sb.append("'"+data[7]+"',");
-		sb.append("'"+data[8]+"');");
+		sb.append("'"+data[8]+"',");
+		sb.append("'"+data[9]+"');");
 		return sb.toString();
 	}
 	
@@ -50,8 +51,8 @@ public class SqlVerse {
 	
 	public void validateRow(String[] data) {
 		int book = Integer.parseInt(data[0]);
-		if(book < 1 || book > 39)
-			throw new RuntimeException("invalid book id");
+//		if(book < 1 || book > 39)
+//			throw new RuntimeException("invalid book id");
 		String verse = escapeChars(data[1]);
 		if(verse == null || verse.trim().length() == 0) {
 			throw new RuntimeException("verse is empty");

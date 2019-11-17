@@ -14,7 +14,7 @@ import java.util.List;
 
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;
-import org.torah.loader.jps.JpsHtmlParser;
+import org.torah.loader.html.JpsHtmlParser;
 import org.torah.loader.sql.SqlVerse;
 
 public class JpsFileToSqlTest {

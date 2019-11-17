@@ -1,4 +1,4 @@
-package org.torah.loader.jps;
+package org.torah.loader.html;
 
 import java.io.File;
 import java.io.IOException;
