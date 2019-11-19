@@ -68,6 +68,59 @@ app.controller('HomeCtrl', function ($scope, $location, $http, $location) {
 			return "";
 	}
 	
+	$scope.bibleSearch = function() {
+		$scope.error = undefined;
+		$scope.gemReport = {};
+		$scope.gemResults = {};
+		$scope.resultList = {};
+		var passage = $scope.query;
+		var req1 = {};
+		var rg1 = passage.match(/(Genesis|Gen|Ge|Exodus|Exo|Ex|Leviticus|Lev|Le|Numbers|Num|Nu|Deuteronomy|Deu|De|Joshua|Jos|Jo|Judges|Jud|Ju|1 Samuel|1 Sam|1 Sa|2 Samuel|2 Sam|2 Sa|1 Kings|1 Kin|1 Ki|2 Kings|2 Kin|2 Ki|Isaiah|Isa|Is|Jeremiah|Jer|Je|Ezekiel|Eze|Ez|Hosea|Hos|Ho|Joel|Joe|Jo|Amos|Amo|Am|Obadiah|Oba|Ob|Jonah|Jon|Jo|Micah|Mic|Mi|Nahum|Nah|Na|Habakkuk|Hab|Ha|Zephaniah|Zep|Ze|Haggai|Hag|Ha|Zechariah|Zec|Ze|Malachi|Mal|Ma|Psalms|Psa|Ps|Proverbs|Pro|Pr|Job|Job|Jo|Song of Songs|Song |Song|Ruth|Rut|Ru|Lamentations|Lam|La|Ecclesiastes|Ecc|Ec|Esther|Est|Es|Daniel|Dan|Da|Ezra|Ezr|Ez|Nehemiah|Neh|Ne|1 Chronicles|1 Chr|1 Ch|2 Chronicles|2 Chr|2 Ch|Matthew|Mat|Ma|Mark|Mar|Ma|Luke|Luk|Lu|John|Joh|Jo|Acts|Act|Ac|Romans|Rom|Ro|1 Corinthians|1 Cor|1 Co|2 Corinthians|2 Cor|2 Co|Galatians|Gal|Ga|Ephesians|Eph|Ep|Philippians|Phili|Colossians|Col|Co|1 Thessalonians|1 The|1 Th|2 Thessalonians|2 The|2 Th|1 Timothy|1 Tim|1 Ti|2 Timothy|2 Tim|2 Ti|Titus|Tit|Ti|Philemon|Phile|Hebrews|Heb|He|James|Jam|Ja|1 Peter|1 Pet|1 Pe|2 Peter|2 Pet|2 Pe|1 John|1 Joh|1 Jo|2 John|2 Joh|2 Jo|3 John|3 Joh|3 Jo|Jude|Jud|Ju|Revelation|Rev|Re) (\d+\:?\d*\-?\d*)/);
+		if(rg1 != null && rg1.length == 3) {
+			req1.book = rg1[1];
+			var rg2 = rg1[2].match(/(\d+)/);
+			var rg3 = rg1[2].match(/(\d+):(\d+)/);
+			var rg4 = rg1[2].match(/(\d+):(\d+)\-(\d+)/);
+			if(rg2 != null && rg2.length == 2) {
+				req1.chapter = rg2[1];
+			}
+			if(rg3 != null && rg3.length == 3) {
+				req1.chapter = rg3[1];
+				req1.versex = rg3[2];
+				
+			}
+			if(rg4 != null && rg4.length == 4) {
+				req1.chapter = rg4[1];
+				req1.versex = rg4[2];
+				req1.versey = rg4[3];
+			}
+		}
+		//console.log("search result: "+req1.book+ " "+req1.chapter + " "+req1.versex+" "+req1.versey );
+		
+		if(req1.book != undefined && req1.chapter != undefined) {
+		$http.post("bible.php", JSON.stringify(req1))
+  .then(function(response) {
+			$scope.resultList = response.data;
+			
+  });
+		
+	} 
+	
+	var isnum = myNumber($scope.query);
+
+	if(isnum) {
+		  $http.get("gemsearchrpt.php?query="+$scope.query)
+			.then(function(response) {
+				$scope.gemReport = response.data;
+			});
+	}
+	
+	if(!isnum && req1.book != undefined && req1.chapter != undefined) {
+		$scope.error = "Please enter numeric value for search";
+	}
+	
+	};
+	
 	$scope.doSearch3 = function() {
 	$scope.error = undefined;
 	$scope.gemReport = {};
@@ -93,6 +146,7 @@ app.controller('HomeCtrl', function ($scope, $location, $http, $location) {
 	$scope.error = undefined;
 	$scope.gemReport = {};
 	$scope.gemResults = {};
+	$scope.resultList = {};
 
 	var searchObject = $location.search();
 	
@@ -101,7 +155,9 @@ app.controller('HomeCtrl', function ($scope, $location, $http, $location) {
 		$scope.query = searchObject.q;
 		$scope.book = searchObject.b;
 	}
-
+	var req1 = {};
+	req1.book = searchObject.book;
+	req1.chapter = searchObject.chapter;
 	//if(isnum && myNumber(searchObject.q) && $scope.query != searchObject.q) {
 	//	query = $scope.query;
 	//}
@@ -125,6 +181,13 @@ app.controller('HomeCtrl', function ($scope, $location, $http, $location) {
 			});
 	}
 	
+	if(req1.book != undefined && req1.chapter != undefined) {
+		$http.post("bible.php", JSON.stringify(req1))
+  .then(function(response) {
+			$scope.resultList = response.data;
+			
+  });
+	}
 	
 	
 	};

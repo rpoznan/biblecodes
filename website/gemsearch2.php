@@ -52,6 +52,9 @@ while ($stmt->fetch()) {
         foreach($row as $key => $val) 
         { 
             $c[$key] = $val; 
+			if($key == "tran_verse") {
+				$c[$key] = strrev ( $val );
+			}
         } 
         $result1[] = $c; 
     } 

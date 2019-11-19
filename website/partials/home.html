@@ -70,10 +70,9 @@
 
         <div class="row">
             <div class="col-lg-12">
-                <h2>Biblical Number Search</h2>
-                <p>Enter in value from 10's to 10k</p>
+                <h2>Bible Search</h2>
                 <input type="text" ng-model="query"/>
-				<button ng-click="doSearch3()">Search</button>
+				<button ng-click="bibleSearch()">Search</button>
             </div>
         </div>
 		</div>
@@ -90,8 +89,7 @@
     <div class="col-sm-8" style="background-color:pink;">
 		<div class="row">
             <div class="col-sm-12">
-				<div ng-bind-html="x.verse"></div>
-				
+				<!-- <div ng-bind-html="x.verse"></div> -->
 				{{x.verse}}
 			</div>
 		</div>
@@ -119,7 +117,7 @@
 		   <p style="background-color:yellow;" ng-repeat="gg in gemResults.word">{{gg.word}}, {{gg.tran_word}}</p>
 			   <div class="row" ng-repeat="x in gemResults.verseList">
     <div class="col-sm-4" style="background-color:yellow;">
-     {{x.eng_book_name}} {{x.num_chapter}}:{{x.num_verse}}<br>
+     <a href="#/?book={{x.eng_book_name}}&chapter={{x.num_chapter}}">{{x.eng_book_name}} {{x.num_chapter}}:{{x.num_verse}}</a><br>
     </div>
     <div class="col-sm-8" style="background-color:pink;">
 		<div class="row">
@@ -151,115 +149,6 @@
 </div>
 <!-- /.section-colored -->
 
-<div class="section">
-
-    <div class="container">
-
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2>Display Some Work on the Home Page Portfolio</h2>
-                <hr>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-home-portfolio" src="http://placehold.it/700x450">
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-home-portfolio" src="http://placehold.it/700x450">
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-home-portfolio" src="http://placehold.it/700x450">
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-home-portfolio" src="http://placehold.it/700x450">
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-home-portfolio" src="http://placehold.it/700x450">
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6">
-                <a href="portfolio-item.html">
-                    <img class="img-responsive img-home-portfolio" src="http://placehold.it/700x450">
-                </a>
-            </div>
-        </div>
-        <!-- /.row -->
-
-    </div>
-    <!-- /.container -->
-
-</div>
-<!-- /.section -->
-
-<div class="section-colored">
-
-    <div class="container">
-
-        <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6">
-                <h2>Modern Business Features Include:</h2>
-                <ul>
-                    <li>Bootstrap 3 Framework</li>
-                    <li>Mobile Responsive Design</li>
-                    <li>Predefined File Paths</li>
-                    <li>Working PHP Contact Page</li>
-                    <li>Minimal Custom CSS Styles</li>
-                    <li>Unstyled: Add Your Own Style and Content!</li>
-                    <li>Font-Awesome fonts come pre-installed!</li>
-                    <li>100% <strong>Free</strong> to Use</li>
-                    <li>Open Source: Use for any project, private or commercial!</li>
-                </ul>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6">
-                <img class="img-responsive" src="http://placehold.it/700x450/ffffff/cccccc">
-            </div>
-        </div>
-        <!-- /.row -->
-
-    </div>
-    <!-- /.container -->
-
-</div>
-<!-- /.section-colored -->
-
-<div class="section">
-
-    <div class="container">
-
-        <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6">
-                <img class="img-responsive" src="http://placehold.it/700x450">
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6">
-                <h2>Modern Business Features Include:</h2>
-                <ul>
-                    <li>Bootstrap 3 Framework</li>
-                    <li>Mobile Responsive Design</li>
-                    <li>Predefined File Paths</li>
-                    <li>Working PHP Contact Page</li>
-                    <li>Minimal Custom CSS Styles</li>
-                    <li>Unstyled: Add Your Own Style and Content!</li>
-                    <li>Font-Awesome fonts come pre-installed!</li>
-                    <li>100% <strong>Free</strong> to Use</li>
-                    <li>Open Source: Use for any project, private or commercial!</li>
-                </ul>
-            </div>
-        </div>
-        <!-- /.row -->
-
-    </div>
-    <!-- /.container -->
-
-</div>
-<!-- /.section -->
 
 <div class="container">
 
