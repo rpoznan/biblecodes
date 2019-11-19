@@ -9,11 +9,13 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.torah.loader.gem.ChapterVerseNumberMap;
 import org.torah.loader.gem.GematriaCalc;
 import org.torah.loader.tran.Transliterator;
 
 public class JpsHtmlParser {
 	
+	private ChapterVerseNumberMap hebrewNumberMap = new ChapterVerseNumberMap();
 	/**
 	 * Convert File to UTF-8 first
 	 * @param jpsFile
@@ -42,7 +44,7 @@ public class JpsHtmlParser {
  	        	
  	        	Element row = rows.get(i);
 	            Elements cols = row.select("td");
-	            String[] data = new String[9];
+	            String[] data = new String[10];
 	            String hebrewNum = cols.get(0).select("b").get(0).text();	            
 	            String hebrew = cols.get(0).text();
 	            //System.out.println(hebrewNum);
@@ -82,6 +84,7 @@ public class JpsHtmlParser {
 	            data[6] = "rpoznan";
 	            data[7] = Transliterator.transliterate(data[1]);
 	            data[8] = GematriaCalc.calculate(data[1])+"";
+	            data[9] = hebrewNumberMap.getNumberToAleph().get(chapter);
 	            
 	            verseList.add(data);
 	           
